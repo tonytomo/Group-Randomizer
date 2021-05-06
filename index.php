@@ -64,7 +64,7 @@
                     $mod = $n % $groups;
                     $nmod = $n - $mod;
                     $k = 0;
-                    $modflag = 0;
+                    $modflag = 0; // Flag pembatas mod
 
                     // Shuffle array
                     shuffle($arrname);
@@ -74,12 +74,15 @@
                             echo '<div class="card">';
                             echo '<h2>Kelompok ' . $i . '</h2>';
                             echo '<ul>';
+                            // Pengelompokan Setara
+                            // (n-(n%groups) / groups
                             for ($j = 0; $j < $nmod / $groups; $j++) {
                                 if ($arrname[$k]) {
                                     echo '<li>' . $arrname[$k] . '</li>';
                                     $k++;
                                 }
                             }
+                            // Pengelompokan sisa
                             if ($n >= $nmod && $modflag < $mod) {
                                 if ($arrname[$k]) {
                                     echo '<li>' . $arrname[$k] . '</li>';
@@ -97,8 +100,10 @@
             <!-- Date Time -->
             <p class="datetime">
                 <?php
+                // Set default timezone
                 date_default_timezone_set('Asia/Jakarta');
 
+                // hari bulan tahun Jam.Menit.Detik
                 $date = date("d M Y H.i.s");
                 echo 'Pengacakan dilakukan pada ' . $date . ' WIB.';
                 ?>
