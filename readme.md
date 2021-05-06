@@ -11,6 +11,9 @@ _Membuat kelompok secara acak_
 * Daftar nama (name-list)
 * Pembagian kelompok (cards)
 
+### Additional
+* Date dan time terakhir submit
+
 Element | Hex color
 ------- | ---------
 body | #d1d1d1

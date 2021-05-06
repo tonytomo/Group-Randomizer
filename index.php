@@ -71,8 +71,11 @@
 
                     while ($k < $n) {
                         for ($i = 1; $i <= $groups; $i++) {
+                            // Isi card
                             echo '<div class="card">';
-                            echo '<h2>Kelompok ' . $i . '</h2>';
+                            // Nomor kelompok
+                            echo '<h2>Kelompok ' . $i . '</h2><hr>';
+                            // List
                             echo '<ul>';
                             // Pengelompokan Setara
                             // (n-(n%groups) / groups
@@ -83,7 +86,7 @@
                                 }
                             }
                             // Pengelompokan sisa
-                            if ($n >= $nmod && $modflag < $mod) {
+                            if ($modflag < $mod) {
                                 if ($arrname[$k]) {
                                     echo '<li>' . $arrname[$k] . '</li>';
                                     $k++;

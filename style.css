@@ -8,15 +8,16 @@ body {
 
 .container {
     margin: 1em;
-    display: block;
+    display: flex;
+    flex-direction: column;
     box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.2);
 }
 
 @media (min-width: 70em) {
     .container {
-        display: flex;
+        flex-direction: row;
     }
-    .container > * {
+    .container>* {
         flex-basis: 100%;
     }
 }
