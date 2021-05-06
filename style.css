@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #d1d1d1;
+}
+
+/* Container */
+
+.container {
+    margin: 1em;
+    display: block;
+    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 70em) {
+    .container {
+        display: flex;
+    }
+    .container > * {
+        flex-basis: 100%;
+    }
+}
+
+/* Form */
+
+.container-form {
+    background-color: #ffffff;
+    display: block;
+    padding: 0 2em 2em;
+}
+
+/* Form title */
+
+.container-form h1 {
+    color: #0084ff;
+    padding-top: 1em;
+}
+
+@media (min-width: 70em) {
+    .container-form h1 {
+        padding-top: 0;
+    }
+}
+
+/* Form form */
+
+form>input {
+    outline: none;
+    border: none;
+    padding: .5em 1em;
+    font-size: 12pt;
+    margin-bottom: .5em;
+    margin-right: 1em;
+    border-radius: 20px;
+}
+
+form hr {
+    margin-bottom: 1em;
+}
+
+/* Input */
+
+.input {
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+    background-color: #f5f5f5;
+    transition-duration: 200ms;
+}
+
+.input:focus {
+    background-color: #ffffff;
+}
+
+::placeholder {
+    font-size: 10pt;
+}
+
+.input-name {
+    margin-bottom: .3em;
+}
+
+/* Button */
+
+.input-btn {
+    background-color: #0084ff;
+    font-size: 10pt;
+    color: #ffffff;
+    cursor: pointer;
+    transition-duration: 200ms;
+}
+
+.input-btn:hover {
+    background-color: #43a4ff;
+}
+
+/* Result */
+
+.container-result {
+    background-color: #0084ff;
+    padding: 0 2em 2em;
+    box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Result title */
+
+.container-result h1 {
+    color: #ffffff;
+}
+
+.container-result h1 {
+    padding-top: 1em;
+}
+
+@media (min-width: 70em) {
+    .container-result {
+        box-shadow: inset 4px 0 4px rgba(0, 0, 0, 0.3);
+    }
+    .container-result h1 {
+        margin-top: 0;
+    }
+}
+
+/* Daftar nama */
+
+.name-list {
+    margin: 0 auto;
+    padding: .5em 1em;
+    max-width: 33em;
+    min-height: 2ch;
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+
+/* Kelompok */
+
+.cards {
+    margin: 1em auto 0;
+    padding: .5em 1em;
+    max-width: 35em;
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+/* Hasil pengelompokan */
+
+.card {
+    padding: .5em 1em;
+    width: 30ch;
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+
+.card>* {
+    margin: 0 0 .2em;
+}
+
+.card h2 {
+    color: #0084ff;
+}
+
+.card ul {
+    padding-left: 1em;
+    color: #505050;
+}
+
+/* Date time */
+
+.datetime {
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+}
