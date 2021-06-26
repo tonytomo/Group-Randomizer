@@ -17,19 +17,9 @@
             <h1>Input:</h1>
             <!-- Form input -->
             <form action="index.php" method="post">
-                <input type="number" name="num" class="input input-num" placeholder="Jumlah nama" value="<?php if (isset($_POST['num'])) echo $_POST['num']; ?>">
-                <input type="submit" name="generate" value="Generate" class="input-btn">
-                <hr>
-                <!-- Create input form -->
-                <?php
-                if (isset($_POST['generate'])) {
-                    $n = $_POST['num'];
+                <!-- Input nama, separator \n -->
+                <textarea name="nama" id="nama" cols="20" rows="10" placeholder="Input nama"><?php if (isset($_POST['random'])) echo $_POST['nama']; ?></textarea>
 
-                    for ($i = 0; $i < $n; $i++)
-                        echo '<input type="text" name="nama' . $i . '" class="input input-name" placeholder="Nama"><br>';
-                    echo '<hr>';
-                }
-                ?>
                 <!-- Input jumlah kelompok -->
                 <input type="number" name="groups" class="input input-num" placeholder="Jumlah kelompok" value="<?php if (isset($_POST['groups'])) echo $_POST['groups']; ?>">
                 <input type="submit" name="random" value="Randomize" class="input-btn">
@@ -44,10 +34,13 @@
                 <?php
                 $arrname = array();
                 if (isset($_POST['random'])) {
-                    $n = $_POST['num'];
-                    // Push nama ke dalam array
+                    $allname = $_POST['nama'];
+                    $arrname = explode("\n", $allname);
+                    $n = sizeof($arrname);
+
+                    // Change all element to Upper case
                     for ($i = 0; $i < $n; $i++)
-                        array_push($arrname, strtoupper($_POST['nama' . $i]));
+                        $arrname[$i] = ucfirst($arrname[$i]);
 
                     // Print all value
                     foreach ($arrname as $value)
@@ -59,7 +52,7 @@
             <div class="cards">
                 <?php
                 if (isset($_POST['random'])) {
-                    $n = $_POST['num'];
+                    $n = sizeof($arrname);
                     $groups = $_POST['groups'];
                     $mod = $n % $groups;
                     $nmod = $n - $mod;
@@ -103,12 +96,14 @@
             <!-- Date Time -->
             <p class="datetime">
                 <?php
-                // Set default timezone
-                date_default_timezone_set('Asia/Jakarta');
+                if (isset($_POST['random'])) {
+                    // Set default timezone
+                    date_default_timezone_set('Asia/Jakarta');
 
-                // hari bulan tahun Jam.Menit.Detik
-                $date = date("d M Y H.i.s");
-                echo 'Pengacakan dilakukan pada ' . $date . ' WIB.';
+                    // hari bulan tahun Jam.Menit.Detik
+                    $date = date("d M Y H.i.s");
+                    echo 'Pengacakan dilakukan pada ' . $date . ' WIB.';
+                }
                 ?>
             </p>
         </div>
